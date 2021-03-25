@@ -15,4 +15,12 @@ class PrimeController extends Controller
     {
         return view('auth.login_register');
     }
+    public function insert_items()
+    {
+        return view ('insert_items');
+    }
+    public function prueba()
+    {
+        return view('prueba');
+    }
 }

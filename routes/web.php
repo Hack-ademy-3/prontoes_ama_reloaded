@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PrimeController::class,'home'])->name("home");
-Route::get('/auth/login_register', [PrimeController::class,'login'])->name("login");
+Route::get('/auth/login_register', [PrimeController::class,'login'])->name("login_register");
+Route::get('/insert_items', [PrimeController::class,'insert_items'])->name("insert_items");
+Route::get('/prueba', [PrimeController::class,'prueba'])->name("prueba");

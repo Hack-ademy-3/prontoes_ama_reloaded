@@ -18,7 +18,7 @@
 
   <!-- Vendor CSS Files -->
   {{-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> --}}
-  {{--<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" --}}>
+  {{--<link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" --}}
   <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"> 
 
@@ -43,7 +43,7 @@
  
 
   <main id="main">
-
+    
   @include('layouts._aboutus')
 
    @include('layouts._whyus')
