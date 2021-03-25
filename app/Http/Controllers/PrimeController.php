@@ -10,4 +10,9 @@ class PrimeController extends Controller
     {
        return view('template.index');
     }
+
+    public function login()
+    {
+        return view('auth.login_register');
+    }
 }

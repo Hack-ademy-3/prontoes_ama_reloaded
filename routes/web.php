@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PrimeController::class,'home'])->name("home");
+Route::get('/auth/login_register', [PrimeController::class,'login'])->name("login");
