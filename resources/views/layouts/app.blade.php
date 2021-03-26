@@ -29,15 +29,30 @@
 </head>
 
 <body>
+  <!-- ======= Header Section ======= -->
+  @include('layouts._header')
+
+  <!-- ======= Hero Section ======= -->
+  @include('layouts._hero')
+
   <main id="main">
+  @include('layouts._aboutus')
+
+  @include('layouts._whyus')
+
+  @include('layouts._faq')
+
+  @include('layouts._contactus')
     <div class="container">
      @yield('hueco')
     </div>
   
   </main>
+  @include('layouts._footer')
 
   <!-- Vendor JS Files -->
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
  
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PrimeController extends Controller
@@ -23,4 +24,5 @@ class PrimeController extends Controller
     {
         return view('prueba');
     }
+    
 }

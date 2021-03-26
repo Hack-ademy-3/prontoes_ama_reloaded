@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller{
 
@@ -22,12 +23,14 @@ public function newAnnouncement()
     
     return view('announcement.new'); 
 }
-public function createAnnouncement(Request $request)
-{
+public function createAnnouncement(AnnouncementRequest $request)
+{   
+    
     $a = new Announcement();
     $a->title = $request->input('title');
     $a->body = $request->input('body');
+    $a->category_id = $request->input('category');
     $a->save();
-    return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');;
+    return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
 }
 }
