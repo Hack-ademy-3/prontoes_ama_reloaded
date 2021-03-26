@@ -43,7 +43,7 @@
         </div>
 
         <div class="col-lg-5 col-md-7">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="{{("")}} method="post" role="form" class="php-email-form">
                 <select class="form-select" aria-label="Default select example">
                   @foreach ($categories as $category)
                     <option value="1">{{$category->name}}</option>
