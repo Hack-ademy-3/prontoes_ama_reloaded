@@ -45,10 +45,9 @@
         <div class="col-lg-5 col-md-7">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                 <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                  @foreach ($categories as $category)
+                    <option value="1">{{$category->name}}</option>
+                @endforeach
                   </select>
                 
                 <div class="form-group">
