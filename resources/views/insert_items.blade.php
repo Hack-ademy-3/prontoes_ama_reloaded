@@ -47,11 +47,11 @@
                 <select class="form-select" aria-label="Default select example">
                   @foreach ($categories as $category)
                     <option value="1">{{$category->name}}</option>
-                @endforeach
+                  @endforeach
                   </select>
                 
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Título" required>
                 </div>
                 <div class="form-group mt-3">
                     <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>

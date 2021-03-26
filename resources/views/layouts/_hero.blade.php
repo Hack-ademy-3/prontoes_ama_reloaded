@@ -15,9 +15,7 @@
             </div>
 
             <div class="my-3">
-                <div class="loading">Cargando</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Tu solicitud de registro se ha enviado exitosamente. ¡Gracias!</div>
+               
             </div>
             <div class="text-center"><button type="submit">Iniciar sesión o registrarme</button></div>
         </form>
