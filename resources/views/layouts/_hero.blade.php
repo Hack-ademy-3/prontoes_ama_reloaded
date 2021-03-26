@@ -3,7 +3,7 @@
         <h1>Bienvenid@ a Pronto</h1>
         <h2>El mayor portal web de segunda mano del universo.</h2>
 
-        <form action="{{route('login')}}" method="post" role="form" class="php-email-form">
+        <form action="{{route('login_register')}}" method="get" role="form" class="php-email-form">
             <div class="row no-gutters">
            {{--      <div class="col-md-6 form-group pl-md-1">
                     <input type="email" class="form-control" name="email" id="email" placeholder="Tu email" required>

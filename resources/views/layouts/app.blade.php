@@ -38,9 +38,10 @@
 
   <!-- Vendor JS Files -->
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/vendor/php-email-form/validate.js"></script>
+ 
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
+ 
 </body>
 
 </html>
