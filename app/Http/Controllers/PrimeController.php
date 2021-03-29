@@ -20,9 +20,9 @@ class PrimeController extends Controller
     {
         return view ('insert_items');
     }
-    public function prueba()
+    public function new()
     {
-        return view('prueba');
+        return view('announcement.new');
     }
     
 }

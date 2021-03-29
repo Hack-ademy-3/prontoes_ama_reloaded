@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('hueco')
-{{-- <!-- ======= Contact Us Section ======= -->
+<!-- ======= Contact Us Section ======= -->
 <section id="contact" class="contact section-bg">
     <div class="container">
 
@@ -61,10 +61,10 @@
     </div>
 
     </div>
-</section><!-- End Contact Us Section --> --}}
+</section><!-- End Contact Us Section -->
 
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+{{-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -134,7 +134,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection
 
