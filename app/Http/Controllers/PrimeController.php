@@ -7,10 +7,7 @@ use Illuminate\Http\Request;
 
 class PrimeController extends Controller
 {
-    public function home()
-    {
-       return view('welcome');
-    }
+  
 
     public function login()
     {
@@ -20,9 +17,9 @@ class PrimeController extends Controller
     {
         return view ('insert_items');
     }
-    public function prueba()
+    public function new()
     {
-        return view('prueba');
+        return view('announcement.new');
     }
     
 }

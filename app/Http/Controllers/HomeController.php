@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use App\Http\Requests\AnnouncementRequest;
 
@@ -23,6 +24,7 @@ public function index()
     return view('home');
 }
 
+
 public function newAnnouncement() 
 {
     
@@ -36,6 +38,7 @@ public function createAnnouncement(AnnouncementRequest $request)
     $a->body = $request->input('body');
     $a->category_id = $request->input('category');
     $a->price = $request->input('price');
+    $a->user_id = Auth::id();
     $a->save();
     return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
 }
