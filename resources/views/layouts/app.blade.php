@@ -29,26 +29,17 @@
 </head>
 
 <body>
-  <!-- ======= Header Section ======= -->
-  @include('layouts._header')
+@include('layouts._header')
 
-  <!-- ======= Hero Section ======= -->
-  @include('layouts._hero')
+<main id="main">
+@if(session('announcement.create.success'))
+    <div class="alert alert-success">{{session('announcement.create.success')}}</div>
+@endif
 
-  <main id="main">
-  @include('layouts._aboutus')
+@yield('hueco')  
 
-  @include('layouts._whyus')
-
-  @include('layouts._faq')
-
-  @include('layouts._contactus')
-    <div class="container">
-     @yield('hueco')
-    </div>
-  
-  </main>
-  @include('layouts._footer')
+</main>
+@include('layouts._footer')
 
   <!-- Vendor JS Files -->
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

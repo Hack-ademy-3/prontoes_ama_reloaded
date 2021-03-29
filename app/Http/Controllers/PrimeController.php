@@ -9,7 +9,7 @@ class PrimeController extends Controller
 {
     public function home()
     {
-       return view('template.index');
+       return view('welcome');
     }
 
     public function login()

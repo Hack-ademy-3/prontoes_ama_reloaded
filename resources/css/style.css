@@ -391,11 +391,11 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   background-size: cover;
   position: relative;
   margin-top: -80px;
-  z-index: 9;
+  z-index: 2;
 }
 
 #hero .hero-container {
-  position: absolute;
+  
   bottom: 0;
   top: 0;
   left: 0;
@@ -406,6 +406,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   flex-direction: column;
   text-align: center;
   padding: 0 15px;
+
 }
 
 #hero h1 {
@@ -456,7 +457,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  /* border: 3px solid #18d26e; */
   border-top-color: #eee;
   -webkit-animation: animate-loading-notify 1s linear infinite;
   animation: animate-loading-notify 1s linear infinite;
