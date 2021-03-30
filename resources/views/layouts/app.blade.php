@@ -43,6 +43,18 @@
  
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
+  <script>
+    let logout_btn = document.getElementById('logout');
+    let logout_form = document.getElementById('form_logout');
+    if (logout_btn != null ){
+    logout_btn.addEventListener('click', function ()
+      {
+        logout_form.submit();
+      } 
+      )
+    }
+    </script>
+    
  
 </body>
 

@@ -10,12 +10,23 @@
         <button type="button" class="nav-toggle"><i class="bx bx-menu"></i></button>
         <nav class="nav-menu">
             <ul>
+              @auth
+              <li><a href="#">Hola {{auth()->user()->name}}</a></li>
+              <form action="{{route('logout')}}" id='form_logout' method="POST" >
+                @csrf
+                </form>
+                <li><a id='logout' class="dropdown-item" href="#">Logout</a></li>
+                @endauth
+                 @guest
+                <li><a class="dropdown-item" href="{{route('login')}}">Login / Registro</a></li>
+                
+                @endguest
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('announcement.new') }}">
                         Nuevo Anuncio
                     </a>
                 </li>
-                <li class="active"><a href="#header" class="scrollto">Home</a></li>
+                
                 <li><a href="#about" class="scrollto">Sobre nosotros</a></li>
                 <li><a href="#why-us" class="scrollto">¿Por qué vender en Pronto.es?</a></li>
 
