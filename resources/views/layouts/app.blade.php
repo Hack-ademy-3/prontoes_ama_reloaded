@@ -29,6 +29,10 @@
 </head>
 
 <body>
+
+@if(session('access.denied.revisor.only'))
+<div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+@endif
 @include('layouts._header')
 
 

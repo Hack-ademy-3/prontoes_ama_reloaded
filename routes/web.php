@@ -29,3 +29,4 @@ Route::get('/prueba', [PrimeController::class,'prueba'])->name("prueba");
 Route::get('/new', [PrimeController::class,'new'])->name("new_article");
 Route::get('/category/{name}/{id}/announcements', [PublicController::class,'announcementsByCategory'])->name('category.announcements');
 
+Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home');
