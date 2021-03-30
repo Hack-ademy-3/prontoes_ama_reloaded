@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PrimeController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,6 @@ Route::get('/prueba', [PrimeController::class,'prueba'])->name("prueba");
 Route::get('/new', [PrimeController::class,'new'])->name("new_article");
 Route::get('/category/{name}/{id}/announcements', [PublicController::class,'announcementsByCategory'])->name('category.announcements');
 
-Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home');
+Route::get('/revisor/home',[RevisorController::class,'index'] )->name('revisor.home');
+Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.announcement.accept');
+Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.announcement.reject');
