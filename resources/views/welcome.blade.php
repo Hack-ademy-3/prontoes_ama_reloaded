@@ -3,17 +3,21 @@
 @section('hueco')
 
 @include('layouts._hero')
-<div class="container">
+
+@if(session('announcement.create.success'))
+    <div class="alert alert-success">{{session('announcement.create.success')}}</div>
+@endif
+<div class="container d-flex ">
 
     @foreach($announcements as $announcement)
     <div class="row my-3">
-        <div class="col-12 col-md-8 offset-md-2">
-            <div class="card">
+        <div class="col-lg-12 col-md-6">
+            <div class="card mx-3">
                 <div class="card-header">
                     {{$announcement->title}}
                 </div>
-                <div class="car-body d-flex">
-                    <img src="https://via.placeholder.com/150" alt="">
+                <div class="car-body ">
+                   <div><img class='img-fluid' src="https://picsum.photos/300" alt=""></div> 
                     <p>
                         {{$announcement->body}}
                     </p>

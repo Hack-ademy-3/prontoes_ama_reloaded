@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
 
         });
-        $categories=['motor', 'ropa', 'tecnología', 'deportes', 'cultura','bricolaje'];
+        $categories=['Motor', 'Ropa', 'Tecnología', 'Deportes', 'Cultura','Bricolaje'];
         foreach ($categories as $category) {
             Category::create(['name'=> $category]);
         }

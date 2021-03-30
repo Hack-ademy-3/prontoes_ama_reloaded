@@ -31,14 +31,10 @@
 <body>
 @include('layouts._header')
 
-<main id="main">
-@if(session('announcement.create.success'))
-    <div class="alert alert-success">{{session('announcement.create.success')}}</div>
-@endif
 
 @yield('hueco')  
 
-</main>
+
 @include('layouts._footer')
 
   <!-- Vendor JS Files -->
