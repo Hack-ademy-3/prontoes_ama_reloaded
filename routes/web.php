@@ -18,7 +18,7 @@ use App\Http\Controllers\PublicController;
 Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
-
+Route::get('/announcement/{id}', [HomeController::class,'details'])->name("announcement.details");
 
 
 
@@ -27,4 +27,5 @@ Route::get('/auth/login_register', [PrimeController::class,'login'])->name("logi
 Route::get('/insert_items', [PrimeController::class,'insert_items'])->name("insert_items");
 Route::get('/prueba', [PrimeController::class,'prueba'])->name("prueba");
 Route::get('/new', [PrimeController::class,'new'])->name("new_article");
+Route::get('/category/{name}/{id}/announcements', [PublicController::class,'announcementsByCategory'])->name('category.announcements');
 
