@@ -1,5 +1,5 @@
 
-    <div class="col-12 col-lg-12 col-md-6">
+    <div class="col-12 col-md-4">
         <div class="card mx-3">
             <div class="card-header">
                 {{$announcement->title}}
@@ -15,7 +15,7 @@
                         href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a></strong>
                 <i>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement->user->name}}</i>
             </div>
-            </div>
-        </div>
+         </div>
     </div>
+    
 

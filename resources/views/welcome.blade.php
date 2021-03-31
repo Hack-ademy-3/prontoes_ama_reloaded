@@ -5,11 +5,11 @@
 
 @include('layouts._hero')
 
-<div class="container d-flex">
-        
+<div class="container">
+    <div class="row my-3">
 
             @foreach($announcements as $announcement)
-            <div class="row my-3">
+            
                 @include ('announcement._announcement')
             @endforeach
 
