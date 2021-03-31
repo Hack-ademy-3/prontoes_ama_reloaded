@@ -3,12 +3,6 @@
 @section('hueco')
 <!-- ======= Contact Us Section ======= -->
 <section id="contact" class="contact section-bg">
-    <div class="container">
-
-
-
-    </div>
-
     <div class="row justify-content-center p-5">
         <div class="col-6">
             <h2 class="text-center mb-3">Login</h2>
