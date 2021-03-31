@@ -46,4 +46,11 @@ class PublicController extends Controller
             $announcement = Announcement::findOrFail($id);
             return view("announcement.details",["announcement"=>$announcement]);
         }
+
+
+        public function locale($locale)
+        {
+            session()->put('locale', $locale);
+            return redirect()->back();
+        }
 }

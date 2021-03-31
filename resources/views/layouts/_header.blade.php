@@ -1,11 +1,7 @@
+
+
 <header id="header">
     <div class="container-fluid">
-
-        <div class="logo">
-            {{-- <h1><a href="index.html">Siimple</a></h1> --}}
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-        </div>
 
         <button type="button" class="nav-toggle"><i class="bx bx-menu"></i></button>
         <nav class="nav-menu">
@@ -48,9 +44,12 @@
                     </ul>
                 </li>
                 <li><a href="#contact" class="scrollto">Contacto</a></li>
+                <div class="d-flex">
+                @include('layouts._locale',["lang"=>'es','nation'=>'es'])  
+                @include('layouts._locale',["lang"=>'en','nation'=>'gb'])  
+                @include('layouts._locale',["lang"=>'it','nation'=>'it'])
+            </div>
             </ul>
-
-        </nav><!-- .nav-menu -->
-
-    </div>
+            
+           
 </header>
