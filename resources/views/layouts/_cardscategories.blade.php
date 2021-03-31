@@ -8,12 +8,10 @@
           <div class="card">
             <img src="/img/categories/{{ucfirst($category->name)}}.jpg" class="card-img-top" alt="...">
             <div class="card-icon">
-              <i class="bx bx-book-reader"></i>
+              <i class='bx {{$category->icon}}'></i>
             </div>
             <div class="card-body">
-              <h5 class="card-title"><a href="{{route('category.announcements', ['name'=>$category->name, 'id'=>$category->id])}}">{{$category->name}}</a></h5>
-             
-              
+              <h5 class="card-title"><a href="{{route('category.announcements', ['name'=>$category->name, 'id'=>$category->id])}}">{{$category->name}}</a></h5>   
             </div>
           </div>
         </div>
