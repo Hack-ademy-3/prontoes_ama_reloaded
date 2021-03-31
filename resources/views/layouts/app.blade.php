@@ -25,6 +25,8 @@
 
   <!-- Template Main CSS File -->
   <link href="/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{mix('css/app.css')}}">
+  
 
 </head>
 
@@ -49,6 +51,7 @@
   <!-- Vendor JS Files -->
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="/vendor/php-email-form/validate.js"></script>
+  <script src="{{mix('js/app.js')}}"></script>
  
   <!-- Template Main JS File -->
   <script src="js/main.js"></script>
