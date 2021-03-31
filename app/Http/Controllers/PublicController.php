@@ -39,5 +39,11 @@ class PublicController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(5);
             return view('announcements', compact('category', 'announcements'));
-}
+        }
+
+        public function details($id) 
+        {
+            $announcement = Announcement::findOrFail($id);
+            return view("announcement.details",["announcement"=>$announcement]);
+        }
 }

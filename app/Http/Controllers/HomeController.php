@@ -44,9 +44,5 @@ public function createAnnouncement(AnnouncementRequest $request)
 }
 
 
-   public function details($id) 
-      {
-          $announcement = Announcement::findOrFail($id);
-          return view("announcement.details",["announcement"=>$announcement]);
-      }
+  
 }

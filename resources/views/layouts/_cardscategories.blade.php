@@ -11,7 +11,7 @@
               <i class="bx bx-book-reader"></i>
             </div>
             <div class="card-body">
-              <h5 class="card-title"><a href="">{{$category->name}}</a></h5>
+              <h5 class="card-title"><a href="{{route('category.announcements', ['name'=>$category->name, 'id'=>$category->id])}}">{{$category->name}}</a></h5>
              
               
             </div>
