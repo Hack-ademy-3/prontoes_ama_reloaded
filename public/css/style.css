@@ -11,6 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  text-decoration: none;
 }
 
 a {
@@ -25,6 +26,11 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6, .font-primary {
   font-family: "Raleway", sans-serif;
+}
+
+.nosub {
+text-decoration: none !important;
+
 }
 
 /*--------------------------------------------------------------
