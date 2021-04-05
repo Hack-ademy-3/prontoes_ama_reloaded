@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\AnnouncementImage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller{
@@ -27,8 +30,8 @@ public function index()
 
 public function newAnnouncement() 
 {
-    
-    return view('announcement.new'); 
+    $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+    return view('announcement.new', compact('uniqueSecret')); 
 }
 public function createAnnouncement(AnnouncementRequest $request)
 {   
@@ -40,8 +43,34 @@ public function createAnnouncement(AnnouncementRequest $request)
     $a->price = $request->input('price');
     $a->user_id = Auth::id();
     $a->save();
+
+    $uniqueSecret = $request->input('uniqueSecret');
+    $images = session()->get("images.{$uniqueSecret}",[]);
+
+    foreach($images as $image){
+        $i = new AnnouncementImage;
+        $fileName = basename($image);
+        $newFilePath = "public/announcements/{$a->id}/{$fileName}";
+        Storage::move($image,$newFilePath);
+        $i->file = $newFilePath;
+        $i->announcement_id = $a->id;
+        $i->save();
+    }
+    File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
     return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
 }
+
+    public function uploadImages(Request $request)
+    {
+        
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->file('file')->store('public/temp/{$uniqueSecret}');
+        session()->push("images.{$uniqueSecret}", $fileName);
+        return response()->json(
+            session()->get("images.{$uniqueSecret}")
+         
+     );
+    }
 
 
   

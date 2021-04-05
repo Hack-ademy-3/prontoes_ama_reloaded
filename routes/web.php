@@ -18,6 +18,7 @@ use App\Http\Controllers\RevisorController;
 */
 Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');
 Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
+Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'])->name('announcement.images.upload');
 
 Route::get('/', [PublicController::class,'index'])->name("home");
 Route::get('/announcement/{id}', [PublicController::class,'details'])->name("announcement.details");
