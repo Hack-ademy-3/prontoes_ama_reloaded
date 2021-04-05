@@ -4934,7 +4934,54 @@ module.exports = {
 /***/ (() => {
 
 (function () {
-  alert("Alfonso , Gay");
+  if (document.getElementById("drophere")) {
+    var csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute('content');
+    var uniqueSecret = document.querySelector("input[name='uniqueSecret']").getAttribute('value');
+    var myDropzone = new Dropzone('#drophere', {
+      url: '/announcement/images/upload',
+      params: {
+        _token: csrfToken,
+        uniqueSecret: uniqueSecret
+      },
+      addRemoveLinks: true,
+      init: function init() {
+        fetch("/announcement/images?uniqueSecret=".concat(uniqueSecret), {
+          method: 'GET'
+        }).then(function (response) {
+          return response.json();
+        }).then(function (data) {
+          data.forEach(function (image) {
+            var file = {
+              serverId: image.id,
+              name: image.name,
+              size: image.size
+            };
+            myDropzone.options.addedfile.call(myDropzone, file);
+            myDropzone.options.thumbnail.call(myDropzone, file, image.src);
+            myDropzone.options.success.call(myDropzone, file);
+            myDropzone.options.complete.call(myDropzone, file);
+          });
+        });
+      }
+    });
+    myDropzone.on('success', function (file, response) {
+      file.serverId = response.id;
+    });
+    myDropzone.on("removedfile", function (file) {
+      fetch('/announcement/images/remove', {
+        method: 'DELETE',
+        // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          _token: csrfToken,
+          uniqueSecret: uniqueSecret,
+          id: file.serverId
+        })
+      });
+    });
+  }
 })();
 
 /***/ }),

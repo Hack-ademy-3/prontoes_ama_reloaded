@@ -42,6 +42,13 @@
         </div>
     </div>
 </div>
+@foreach ($announcement->images as $image)
+<div class="row md-2">
+  <div class="col-md-4">
+    <img src="{{ Storage::url($image->file) }}" class="img-fluid" alt="">
+  </div>
+</div>
+@endforeach
 <div class="row justify-content-center">
     <div class="col-md-6">
     <form action="{{route('revisor.announcement.reject',['id'=>$announcement->id])}}" method="POST">
@@ -49,10 +56,11 @@
         <button type="submit" class="btn btn-danger">Rechazar</button>
     </form>
     </div>
+
     <div class="col-md-6 text-right">
         <form action="{{route('revisor.announcement.accept',['id'=>$announcement->id])}}" method="POST">
             @csrf
-            <button type="submit" class="btn btn-success">Acceptar</button>
+            <button type="submit" class="btn btn-success">Aceptar</button>
         </form>
     </div>
 </div>
