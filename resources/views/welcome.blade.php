@@ -8,9 +8,9 @@
 <div class="container">
     <div class="row my-3">
 
+        @include ('announcement._announcement')
             @foreach($announcements as $announcement)
             
-                @include ('announcement._announcement')
             @endforeach
 
         </div>

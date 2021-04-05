@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
@@ -58,6 +59,12 @@ public function createAnnouncement(AnnouncementRequest $request)
         $fileName = basename($image);
         $newFilePath = "public/announcements/{$a->id}/{$fileName}";
         Storage::move($image,$newFilePath);
+
+        dispatch(new ResizeImage(
+            $newFilePath,
+            300,
+            150
+        ));
         $i->file = $newFilePath;
         $i->announcement_id = $a->id;
         $i->save();
@@ -70,11 +77,17 @@ public function createAnnouncement(AnnouncementRequest $request)
     {
         
         $uniqueSecret = $request->input('uniqueSecret');
-        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");/* guarda fisicamente el archivo desde el navegador al servidor */
-        session()->push("images.{$uniqueSecret}", $fileName);
+        $filePath = $request->file('file')->store("public/temp/{$uniqueSecret}");/* guarda fisicamente el archivo desde el navegador al servidor */
+        
+        dispatch(new ResizeImage(
+            $filePath,
+            120,
+            120
+        ));
+        session()->push("images.{$uniqueSecret}", $filePath);
         return response()->json(
             [
-                'id' => $fileName
+                'id' => $filePath
             ]
          
      );
@@ -104,7 +117,7 @@ public function createAnnouncement(AnnouncementRequest $request)
                 
                 'id' => $image,
                 'name' => basename($image),
-                'src' => Storage::url($image),
+                'src' => AnnouncementImage::getUrlByFilePath($image, 120, 120),
                 'size'=> Storage::size($image)
             ];
         }
