@@ -28,6 +28,7 @@ class PublicController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->take(4)
                 ->get();
+          
             return view('welcome', compact('announcements'));
         }
 

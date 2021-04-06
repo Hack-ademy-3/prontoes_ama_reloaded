@@ -16,15 +16,18 @@ use App\Http\Controllers\RevisorController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');
-Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
-Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'])->name('announcement.images.upload');
-Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');
-Route::get('/announcement/images', [HomeController::class,'getImages'])->name('announcement.images');
+
 
 
 Route::get('/', [PublicController::class,'index'])->name("home");
+Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
+Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');
+Route::get('/announcement/images', [HomeController::class,'getImages'])->name('announcement.images');
 Route::get('/announcement/{id}', [PublicController::class,'details'])->name("announcement.details");
+
+Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'])->name('announcement.images.upload');
+Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');
+
 Route::get('/category/{name}/{id}/announcements', [PublicController::class,'announcementsByCategory'])->name('category.announcements');
 Route::post('/locale/{locale}', [PublicController::class,'locale'])->name('locale');
 

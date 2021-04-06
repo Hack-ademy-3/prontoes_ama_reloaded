@@ -60,11 +60,8 @@ public function createAnnouncement(AnnouncementRequest $request)
         $newFilePath = "public/announcements/{$a->id}/{$fileName}";
         Storage::move($image,$newFilePath);
 
-        dispatch(new ResizeImage(
-            $newFilePath,
-            300,
-            150
-        ));
+        dispatch(new ResizeImage($newFilePath,300,150));
+        
         $i->file = $newFilePath;
         $i->announcement_id = $a->id;
         $i->save();
@@ -108,8 +105,8 @@ public function createAnnouncement(AnnouncementRequest $request)
         $uniqueSecret = $request->input('uniqueSecret');
         $images = session()->get("images.{$uniqueSecret}", []);
         $removedImages = session()->get("removedImages.{$uniqueSecret}",[]);
-
         $images = array_diff($images, $removedImages);
+        
         $data = [];
 
         foreach($images as $image){
