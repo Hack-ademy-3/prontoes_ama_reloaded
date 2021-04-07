@@ -1,13 +1,13 @@
 
 @extends('layouts.app')
 @section('hueco')
-<div class='container'>
+{{-- <div class='container'> --}}
 @if($announcement)
 <div class='row my-4'>
-    <div class='col-12'>
+    <div class='col-12 '>
         <div class="card">
             <div class="card-header">
-                Anuncion #{{$announcement->id}}
+                Anuncio #{{$announcement->id}}
             </div>
             <div class="card-body">
                 <div class="row">
@@ -44,12 +44,12 @@
 </div>
 @foreach ($announcement->images as $image)
 <div class="row md-2">
-  <div class="col-md-4">
+  <div class="col-md-2">
     <img src="{{$image->getUrl(300,150)}}" alt="" class="img-fluid">
   </div>
 </div>
 @endforeach
-<div class="row justify-content-center">
+<div class="row ">
     <div class="col-md-6">
     <form action="{{route('revisor.announcement.reject',['id'=>$announcement->id])}}" method="POST">
         @csrf
@@ -71,5 +71,5 @@
     </div>
 </div>
 @endif
-</div>
+{{-- </div> --}}
 @endsection

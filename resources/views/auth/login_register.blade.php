@@ -11,7 +11,7 @@
                 <div class="form-group mb-3">
                     <input type="email" class="form-control"  id="email" placeholder="Email" required name='email'>
                     <div class="form-group mt-3">
-                        <input type="text"  class="form-control" id="name" placeholder="Contraseña" required name='password'>
+                        <input type="password"  class="form-control" id="name" placeholder="Contraseña" required name='password'>
                     </div>
                 </div>
 
@@ -30,9 +30,9 @@
                 </div>
 
                 <div class="form-group mt-3">
-                    <input type="text" name="password" class="form-control" id="name" placeholder="Contraseña" required>
+                    <input type="password" name="password" class="form-control" id="name" placeholder="Contraseña" required>
                     <div class="form-group mt-3">
-                        <input type="text" name="password_confirmation" class="form-control" id="name" placeholder="Repite contraseña"
+                        <input type="password" name="password_confirmation" class="form-control" id="name" placeholder="Repite contraseña"
                             required>
                     </div>
 

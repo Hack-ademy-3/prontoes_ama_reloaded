@@ -31,7 +31,7 @@
                             href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a></strong>
                     <i>{{$announcement->created_at->format('d/m/Y')}} -{{ $announcement->user->name  }}</i>
                 </h5>
-                <a href="#" class="btn btn-danger">¡Quiero ver más!</a>
+                <a href="{{route('announcement.details',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}" class="btn btn-danger">¡Quiero ver más!</a>
             </div>
         </div>
     </div>

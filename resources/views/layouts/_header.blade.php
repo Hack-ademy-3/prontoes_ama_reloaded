@@ -1,5 +1,3 @@
-
-
 <header id="header text-decoration-none">
     <div class="container-fluid">
 
@@ -24,25 +22,25 @@
                     </a>
                 </li>
 
-                <li><a href="#about" class="nosub"">Sobre nosotros</a></li>
-                <li><a href="#why-us" class="nosub"">¿Por qué vender en Pronto.es?</a></li>
-
+                <li><a href="{{route('home')}}" class="nosub"">Home</a></li>
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorias
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @foreach ($categories as $category)
-                        <li><a class="dropdown-item"
-                                href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
-                                {{$category->name}}</a></li>
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @foreach ($categories as $category)
+                    <li><a class="dropdown-item"
+                        href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
+                        {{$category->name}}</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         @endforeach
                     </ul>
                 </li>
+                <li><a href="#why-us" class="nosub"">¿Por qué vender en Pronto.es?</a></li>
                 <li><a href="#contact" class="nosub">Contacto</a></li>
                 <div class="d-flex">
                 @include('layouts._locale',["lang"=>'es','nation'=>'es'])  

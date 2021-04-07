@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('hueco')
 
 <div class="col-12 col-lg-6 col-md-6">
     <div class="card mx-3">
@@ -20,6 +20,9 @@
         </div>
     </div>
 </div>
+@endsection
+
+
 
 
 
