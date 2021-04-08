@@ -43,6 +43,12 @@
                 <li><a href="#why-us" class="nosub"">¿Por qué vender en Pronto.es?</a></li>
                 <li><a href="#contact" class="nosub">Contacto</a></li>
                 <div class="d-flex">
+                <div class="mx-2">
+                    <form action="{{ route('search') }}" method="GET" class="mb-5 mt-5">
+                        <input type="text" name="q" style="width:500px;" placeholder="Buscar..">
+                        <button class="btn btn-danger" type="submit">Buscar</button>
+                    </form>
+                </div>
                 @include('layouts._locale',["lang"=>'es','nation'=>'es'])  
                 @include('layouts._locale',["lang"=>'en','nation'=>'gb'])  
                 @include('layouts._locale',["lang"=>'it','nation'=>'it'])
