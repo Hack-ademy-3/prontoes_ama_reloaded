@@ -42,13 +42,32 @@
         </div>
     </div>
 </div>
-@foreach ($announcement->images as $image)
 <div class="row md-2">
-  <div class="col-md-2">
+@foreach ($announcement->images as $image)
+  <div class="col-md-4">
     <img src="{{$image->getUrl(300,150)}}" alt="" class="img-fluid">
   </div>
+    <div class="col-md-8">
+      Adult : {{ $image->adult }} <br>
+      spoof : {{ $image->spoof }} <br>
+      medical : {{ $image->medical }} <br>
+      violence : {{ $image->violence }} <br>
+      racy : {{ $image->racy }} <br>
+
+      <b>Labels</b><br>
+      <ul>
+          @if ($image-> labels)
+            @foreach ($image->labels as $label)
+            <li>{{ $label }}</li>
+            @endforeach
+          @endif  
+      </ul>
+     {{--  {{ $image->id }} <br>
+      {{ $image->file }} <br>
+      {{ Storage::url($image->file) }} <br> --}}
+    </div>
+  @endforeach
 </div>
-@endforeach
 <div class="row ">
     <div class="col-md-6">
     <form action="{{route('revisor.announcement.reject',['id'=>$announcement->id])}}" method="POST">
