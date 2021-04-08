@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Http\Requests\AnnouncementRequest;
 
@@ -68,7 +69,7 @@ public function createAnnouncement(AnnouncementRequest $request)
         $i->save();
         
         dispatch(new GoogleVisionSafeSearchImage($i->id));
-        dispatch(new GoogleVisionSafeLabelImage($i->id));
+        dispatch(new GoogleVisionLabelImage($i->id));
     }
     File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
     return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
