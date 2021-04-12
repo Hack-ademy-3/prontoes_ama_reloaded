@@ -14,7 +14,6 @@
         @include('layouts._cardscategories')
 
         @include('layouts._faq')
-        <H1>HOLAAA AAJAJ XD</H1>
 
         @include('layouts._contactus')
 </div>
